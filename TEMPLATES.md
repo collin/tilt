@@ -335,23 +335,18 @@ Jabs is a lightweight behavior language. It was inspired by Haml and Sass.
 
 ### Example
 
-  Hello Jabs Templates
-  ========================
-
-  :ready
-    $ #basket
-      .load "/ajax/comments/"
-      :click
-        .toggle
+    :ready
+      $ #basket
+        .load "/ajax/comments/"
+        :click
+          .toggle
 
 ### Usage
 
-To wrap a Markdown formatted document with a layout:
-
-  require 'jabs'
-  template = Tilt::JabsTemplate.new { ":ready" }
-  template.render
-  # => "(function() {\n  jQuery(function() {\n    return function($this) {\n      return $this;\n}(jQuery(window));\n});\n})();"
+      require 'jabs'
+      template = Tilt::JabsTemplate.new { ":ready" }
+      template.render
+      # => "(function() {\n  jQuery(function() {\n    return function($this) {\n      return $this;\n}(jQuery(window));\n});\n})();"
 
 ### Options
 
