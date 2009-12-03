@@ -318,6 +318,25 @@ module Tilt
   register 'sass', SassTemplate
 
 
+  # Jabs template implementation. See:
+  # http://collin.github.com/jabs/
+  #
+  # Jabs templates do not support object scopes, locals, or yield.
+  class JabsTemplate < Template
+    def initialize_engine
+      require_template_library 'jabs' unless defined? ::Jabs::Engine
+    end
+
+    def compile!
+      @engine = ::Jabs::Engine.new(data)
+    end
+
+    def evaluate(scope, locals, &block)
+      @engine.render
+    end
+  end
+  register 'jabs', JabsTemplate
+
   # Builder template implementation. See:
   # http://builder.rubyforge.org/
   class BuilderTemplate < Template
