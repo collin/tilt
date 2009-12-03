@@ -10,6 +10,7 @@ documentation on each supported template engine is provided below.
  * [Haml](#haml) - `Tilt::HamlTemplate`
  * [Liquid](#liquid) - `Tilt::LiquidTemplate`
  * [Mustache](#mustache) - `Tilt::MustachTemplate`
+ * [Jabs](#jabs) - `Tilt::JabsTemplate`
 
 Tilt includes support for simple text formats in addition to
 programmable template languages. These typically do not support
@@ -325,6 +326,43 @@ specified, the template file will be determined from the view class, and the
 
   * [Mustache Docs](http://defunkt.github.com/mustache/)
   * GitHub: [defunkt/mustache](http://github.com/defunkt/mustache)
+
+<a name='jabs'></a>
+Jabs (`jabs`)
+----------------------------------
+
+Jabs is a lightweight behavior language. It was inspired by Haml and Sass.
+
+### Example
+
+  Hello Jabs Templates
+  ========================
+
+  :ready
+    $ #basket
+      .load "/ajax/comments/"
+      :click
+        .toggle
+
+### Usage
+
+To wrap a Markdown formatted document with a layout:
+
+  require 'jabs'
+  template = Tilt::JabsTemplate.new { ":ready" }
+  template.render
+  # => "(function() {\n  jQuery(function() {\n    return function($this) {\n      return $this;\n}(jQuery(window));\n});\n})();"
+
+### Options
+
+Jabs is light on options at this time.
+
+### See also
+
+* [Project Page](http://collin.github.com/jabs/)
+* GitHub: [collin/jabs][jabs]
+
+[jabs project page]: 
 
 
 <a name='markdown'></a>
