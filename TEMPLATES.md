@@ -355,7 +355,7 @@ Jabs is light on options at this time.
 ### See also
 
 * [Project Page](http://collin.github.com/jabs/)
-* GitHub: [collin/jabs][jabs]
+* GitHub: [collin/jabs](http://github.com/collin/jabs/)
 
 [jabs project page]: 
 
